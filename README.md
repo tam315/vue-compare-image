@@ -20,7 +20,9 @@ NOTE: [React Version](https://github.com/junkboy0315/react-compare-image) is als
 
 ## How to use
 
-```cmd
+In the shell:
+
+```bash
 yarn add vue-compare-image
 
 // or
@@ -28,19 +30,21 @@ yarn add vue-compare-image
 npm install --save vue-compare-image
 ```
 
-```html
-<template>
-  <VueCompareImage leftImage="image1.jpg" rightImage="image2.jpg" />;
-</template>
+In your component file:
 
-<script>
+```js
 import VueCompareImage from 'vue-compare-image';
 
 export default {
   name: 'app',
   components: { VueCompareImage },
 };
-</script>
+```
+
+```xml
+<template>
+  <VueCompareImage leftImage="image1.jpg" rightImage="image2.jpg" />;
+</template>
 ```
 
 ## Props

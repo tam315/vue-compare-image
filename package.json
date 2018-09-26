@@ -1,11 +1,30 @@
 {
   "name": "vue-compare-image",
   "version": "0.1.0",
-  "private": true,
+  "description": "Vue component to compare two images using slider.",
+  "author": "Shota Tamura",
+  "license": "MIT",
+  "keywords": [
+    "picture comparison",
+    "image comparison",
+    "slider",
+    "react",
+    "twentytwenty"
+  ],
+  "main": "dist/vueCompareImage.common.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build:lib": "vue-cli-service build --target lib --name vueCompareImage ./src/VueCompareImage.vue",
+    "lint": "vue-cli-service lint",
+    "prepublishOnly": "npm run build:lib"
   },
   "dependencies": {
     "css-element-queries": "^1.0.2",

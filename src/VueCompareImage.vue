@@ -69,6 +69,10 @@ export default Vue.extend({
       type: Number,
       default: 2,
     },
+    sliderPositionPercentage: {
+      type: Number,
+      default: 0.5,
+    },
   },
   methods: {
     getAndSetImageWidth() {
@@ -111,12 +115,13 @@ export default Vue.extend({
       if (pos < minPos) pos = minPos;
       if (pos > maxPos) pos = maxPos;
 
-      this.sliderPositionPercentage = pos / this.imageWidth;
+      this.positionPct = pos / this.imageWidth;
     },
   },
   data() {
     return {
-      sliderPositionPercentage: 0.5, // 0 to 1
+      // slider position percentage(0 to 1)
+      positionPct: this.sliderPositionPercentage || 0.5,
       imageWidth: 0,
     };
   },
@@ -126,17 +131,14 @@ export default Vue.extend({
       return {
         clip:
           'rect(auto, ' +
-          this.imageWidth * this.sliderPositionPercentage +
+          this.imageWidth * this.positionPct +
           'px, auto, auto)',
       };
     },
     sliderStyle() {
       return {
         cursor: !this.hover && 'ew-resize',
-        left:
-          this.imageWidth * this.sliderPositionPercentage -
-          this.handleSize / 2 +
-          'px',
+        left: this.imageWidth * this.positionPct - this.handleSize / 2 + 'px',
         width: `${this.handleSize}px`,
       };
     },

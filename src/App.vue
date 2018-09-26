@@ -1,28 +1,126 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div className="demo-page">
+    <h1>
+      <a href="https://github.com/junkboy0315/react-compare-image">
+        Vue Compare Image
+      </a>
+    </h1>
+
+    <pre class="code language-jsx">
+      <code>
+        {{ code1 }}
+      </code>
+    </pre>
+
+    <div :style="{ maxWidth: '200px' }" class="container">
+      <VueCompareImage leftImage="/cat1.jpg" rightImage="/cat2.jpg" />
+    </div>
+
+    <pre class="code language-jsx">
+      <code>
+        {{ code2 }}
+      </code>
+    </pre>
+
+    <div :style="{ maxWidth: '300px' }" class="container">
+      <VueCompareImage leftImage="/forest1.jpg" rightImage="/forest2.jpg" />
+    </div>
+
+    <pre class="code language-jsx">
+      <code>
+        {{ code3 }}
+      </code>
+    </pre>
+
+    <div :style="{ maxWidth: '500px' }" class="container">
+      <VueCompareImage leftImage="/cat1.jpg" rightImage="/forest2.jpg" hover />
+    </div>
+
+    <pre class="code language-jsx">
+      <code>
+        {{ code4 }}
+      </code>
+    </pre>
+
+    <div :style="{ maxWidth: '100%' }" class="container">
+      <!-- eslint-disable-next-line -->
+      <VueCompareImage leftImage="/forest1.jpg" rightImage="/cat2.jpg" :sliderLineWidth="5" :handleSize="80" />
+    </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Vue from 'vue';
+import VueCompareImage from './VueCompareImage.vue';
+import './assets/prism.css';
+import './assets/prism';
 
-export default {
+const code1 = `
+<div :style="{ maxWidth: '200px' }">
+  <VueCompareImage
+    leftImage="/cat1.jpg"
+    rightImage="/cat2.jpg"
+  />
+</div>`;
+
+const code2 = `
+<div :style="{ maxWidth: '300px' }">
+  <VueCompareImage
+    leftImage="/cat1.jpg"
+    rightImage="/cat2.jpg"
+  />
+</div>`;
+
+const code3 = `
+<div :style="{ maxWidth: '500px' }">
+  <VueCompareImage
+    leftImage="/cat1.jpg"
+    rightImage="/cat2.jpg"
+    hover
+  />
+</div>`;
+
+const code4 = `
+<div :style="{ maxWidth: '100%' }">
+  <VueCompareImage
+    leftImage="/cat1.jpg"
+    rightImage="/cat2.jpg"
+    :sliderLineWidth="5"
+    :handleSize="80"
+  />
+</div>`;
+
+export default Vue.extend({
   name: 'app',
   components: {
-    HelloWorld,
+    VueCompareImage,
   },
-};
+  data() {
+    return {
+      code1,
+      code2,
+      code3,
+      code4,
+    };
+  },
+});
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+}
+</style>
+
+<style scoped lang="scss">
+.container {
+  background: gray;
+}
+pre {
+  margin-top: 8rem;
+  &:first-of-type {
+    margin-top: 0;
+  }
 }
 </style>

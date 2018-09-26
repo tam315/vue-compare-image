@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "css-element-queries": "^1.0.2",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -28,7 +29,11 @@
       "plugin:vue/essential",
       "@vue/airbnb"
     ],
-    "rules": {},
+    "rules": {
+      "no-mixed-operators": 0,
+      "no-irregular-whitespace": 0,
+      "prefer-template": 0
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

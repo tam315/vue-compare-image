@@ -28,10 +28,19 @@ yarn add vue-compare-image
 npm install --save vue-compare-image
 ```
 
-```js
+```html
+<template>
+  <VueCompareImage leftImage="image1.jpg" rightImage="image2.jpg" />;
+</template>
+
+<script>
 import VueCompareImage from 'vue-compare-image';
 
-<VueCompareImage leftImage="image1.jpg" rightImage="image2.jpg" />;
+export default {
+  name: 'app',
+  components: { VueCompareImage },
+};
+</script>
 ```
 
 ## Props

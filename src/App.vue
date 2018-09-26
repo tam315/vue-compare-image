@@ -1,7 +1,7 @@
 <template>
   <div className="demo-page">
     <h1>
-      <a href="https://github.com/junkboy0315/react-compare-image">
+      <a href="https://github.com/junkboy0315/vue-compare-image">
         Vue Compare Image
       </a>
     </h1>

@@ -1,6 +1,6 @@
 # Vue Compare Image
 
-Simple Vue component to compare two images using slider.
+Simple Vue.js component to compare two images using slider.
 
 ![img](https://react-compare-image.yuuniworks.com/anime.gif)
 

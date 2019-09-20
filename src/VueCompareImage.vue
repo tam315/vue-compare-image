@@ -1,7 +1,14 @@
 <template>
   <div class="vci-container" ref="containerRef">
-    <img :src="leftImage" :style="leftImageStyle" class="left-image" ref="leftImageRef"/>
-    <img :src="rightImage" class="right-image" ref="rightImageRef"/>
+    <img :src="leftImage"
+      :style="leftImageStyle"
+      class="left-image"
+      ref="leftImageRef"
+      :alt="leftImageAlt"/>
+    <img :src="rightImage"
+      class="right-image"
+      ref="rightImageRef"
+      :alt="rightImageAlt"/>
     <div :style="sliderStyle" class="vci-slider">
       <div :style="sliderLineStyle" class="line" />
       <div :style="sliderHandleStyle" class="handle">
@@ -52,8 +59,16 @@ export default Vue.extend({
       type: String,
       default: '',
     },
+    leftImageAlt: {
+      type: String,
+      default: '',
+    },
     // under image
     rightImage: {
+      type: String,
+      default: '',
+    },
+    rightImageAlt: {
       type: String,
       default: '',
     },

@@ -52,7 +52,9 @@ export default {
 | Prop (\* required)       | type           | default | description                          |
 | ------------------------ | -------------- | :-----: | ------------------------------------ |
 | leftImage \*             | string         |  null   | left image's url                     |
+| leftImageAlt \*             | string         |  null   | left image's alt                     |
 | rightImage \*            | string         |  null   | right image's url                    |
+| rightImageAlt \*            | string         |  null   | right image's alt                    |
 | sliderLineWidth          | number (px)    |    2    | line width of slider (by pixel)      |
 | handleSize               | number (px)    |   40    | diameter of slider handle (by pixel) |
 | hover                    | boolean        |  false  | Whether to slide at hover            |

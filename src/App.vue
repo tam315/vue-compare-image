@@ -24,7 +24,7 @@
 
     <div :style="{ maxWidth: '300px' }" class="container">
       <!-- eslint-disable-next-line -->
-      <VueCompareImage leftImage="/forest1.jpg" rightImage="/forest2.jpg" :sliderPositionPercentage="0.2" />
+      <VueCompareImage leftImage="/forest1.jpg" rightImage="/forest2.jpg" :sliderPositionPercentage="0.2" leftLabel="Forest 1" rightLabel="Forest 2"/>
     </div>
 
     <pre class="code language-jsx">
@@ -71,6 +71,8 @@ const code2 = `
     leftImage="/cat1.jpg"
     rightImage="/cat2.jpg"
     :sliderPositionPercentage="0.2"
+    leftLabel="Forest 1"
+    rightLabel="Forest 2"
   />
 </div>`;
 

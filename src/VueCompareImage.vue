@@ -1,7 +1,13 @@
 <template>
   <div class="vci-container" ref="containerRef">
+
     <img :src="leftImage" :style="leftImageStyle" class="left-image" ref="leftImageRef"/>
+    <div :style="leftImageStyle" class="left-label">{{leftLabel}}</div>
+
     <img :src="rightImage" class="right-image" ref="rightImageRef"/>
+    <div :style="rightLabelStyle" ref="rightLabelRef" class="right-label">{{rightLabel}}</div>
+
+
     <div :style="sliderStyle" class="vci-slider">
       <div :style="sliderLineStyle" class="line" />
       <div :style="sliderHandleStyle" class="handle">
@@ -57,6 +63,14 @@ export default Vue.extend({
       type: String,
       default: '',
     },
+    leftLabel: {
+      type: String,
+      default: '',
+    },
+    rightLabel: {
+      type: String,
+      default: '',
+    },
     hover: {
       type: Boolean,
       default: false,
@@ -78,6 +92,8 @@ export default Vue.extend({
     getAndSetImageWidth() {
       // @ts-ignore
       this.imageWidth = this.$refs.rightImageRef.getBoundingClientRect().width;
+
+      this.rightLabelWidth = this.$refs.rightLabelRef.getBoundingClientRect().width;
     },
     startSliding(e) {
       // Prevent default behavior other than mobile scrolling
@@ -133,6 +149,14 @@ export default Vue.extend({
           'rect(auto, ' +
           this.imageWidth * this.positionPct +
           'px, auto, auto)',
+      };
+    },
+    rightLabelStyle() {
+      return {
+        clip:
+          'rect(auto, auto, auto, ' +
+          Math.max(0, (this.rightLabelWidth + this.imageWidth * (this.positionPct - 1))) +
+          'px)',
       };
     },
     sliderStyle() {
@@ -232,5 +256,19 @@ export default Vue.extend({
     height: '0px';
     width: '0px';
   }
+}
+
+.left-label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+}
+
+.right-label {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px;
 }
 </style>

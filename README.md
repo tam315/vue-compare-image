@@ -57,6 +57,8 @@ export default {
 | handleSize               | number (px)    |   40    | diameter of slider handle (by pixel) |
 | hover                    | boolean        |  false  | Whether to slide at hover            |
 | sliderPositionPercentage | number (float) |   0.5   | Starting line position (from 0 to 1) |
+| leftLabel                | string         |  null   | Left image text label                |
+| rightLabel               | string         |  null   | Right image text label               |
 
 ## Dependencies
 

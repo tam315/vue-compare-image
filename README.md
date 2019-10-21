@@ -1,6 +1,6 @@
 # Vue Compare Image
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 Simple Vue.js component to compare two images using slider.
 
@@ -73,6 +73,7 @@ export default {
 <table>
   <tr>
     <td align="center"><a href="https://www.yuuniworks.com/"><img src="https://avatars0.githubusercontent.com/u/10986861?v=4" width="100px;" alt="Shota Tamura"/><br /><sub><b>Shota Tamura</b></sub></a><br /><a href="https://github.com/junkboy0315/vue-compare-image/commits?author=junkboy0315" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/lukasirsak"><img src="https://avatars2.githubusercontent.com/u/30669262?v=4" width="100px;" alt="Lukáš Irsák"/><br /><sub><b>Lukáš Irsák</b></sub></a><br /><a href="https://github.com/junkboy0315/vue-compare-image/commits?author=lukasirsak" title="Code">💻</a></td>
   </tr>
 </table>
 

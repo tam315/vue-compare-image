@@ -1,9 +1,7 @@
 <template>
-  <div className="demo-page">
+  <div class="demo-page">
     <h1>
-      <a href="https://github.com/junkboy0315/vue-compare-image">
-        Vue Compare Image
-      </a>
+      <a href="https://github.com/junkboy0315/vue-compare-image">Vue Compare Image</a>
     </h1>
 
     <pre class="code language-jsx">
@@ -13,7 +11,7 @@
     </pre>
 
     <div :style="{ maxWidth: '200px' }" class="container">
-      <VueCompareImage leftImage="/cat1.jpg" rightImage="/cat2.jpg" />
+      <VueCompareImage leftImage="/cat1.jpg" rightImage="/cat2.jpg" rightImageAlt="alttttt" />
     </div>
 
     <pre class="code language-jsx">
@@ -24,7 +22,11 @@
 
     <div :style="{ maxWidth: '300px' }" class="container">
       <!-- eslint-disable-next-line -->
-      <VueCompareImage leftImage="/forest1.jpg" rightImage="/forest2.jpg" :sliderPositionPercentage="0.2" />
+      <VueCompareImage
+        leftImage="/forest1.jpg"
+        rightImage="/forest2.jpg"
+        :sliderPositionPercentage="0.2"
+      />
     </div>
 
     <pre class="code language-jsx">
@@ -45,9 +47,13 @@
 
     <div :style="{ maxWidth: '100%' }" class="container">
       <!-- eslint-disable-next-line -->
-      <VueCompareImage leftImage="/forest1.jpg" rightImage="/cat2.jpg" :sliderLineWidth="5" :handleSize="80" />
+      <VueCompareImage
+        leftImage="/forest1.jpg"
+        rightImage="/cat2.jpg"
+        :sliderLineWidth="5"
+        :handleSize="80"
+      />
     </div>
-
   </div>
 </template>
 

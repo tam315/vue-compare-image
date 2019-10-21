@@ -1,14 +1,13 @@
 <template>
   <div class="vci-container" ref="containerRef">
-    <img :src="leftImage"
+    <img
+      :alt="leftImageAlt"
+      :src="leftImage"
       :style="leftImageStyle"
       class="left-image"
       ref="leftImageRef"
-      :alt="leftImageAlt"/>
-    <img :src="rightImage"
-      class="right-image"
-      ref="rightImageRef"
-      :alt="rightImageAlt"/>
+    />
+    <img :alt="rightImageAlt" :src="rightImage" class="right-image" ref="rightImageRef" />
     <div :style="sliderStyle" class="vci-slider">
       <div :style="sliderLineStyle" class="line" />
       <div :style="sliderHandleStyle" class="handle">

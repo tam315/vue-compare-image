@@ -60,7 +60,7 @@ export default Vue.extend({
     },
     leftImageAlt: {
       type: String,
-      default: '',
+      default: null,
     },
     // under image
     rightImage: {
@@ -69,7 +69,7 @@ export default Vue.extend({
     },
     rightImageAlt: {
       type: String,
-      default: '',
+      default: null,
     },
     hover: {
       type: Boolean,

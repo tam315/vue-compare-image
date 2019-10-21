@@ -2,7 +2,7 @@
 
 Simple Vue.js component to compare two images using slider.
 
-![img](https://react-compare-image.yuuniworks.com/anime.gif)
+![img](https://user-images.githubusercontent.com/10986861/67158760-0f02a480-f377-11e9-9b83-75bc8005693a.gif)
 
 NOTE: [React Version](https://github.com/junkboy0315/react-compare-image) is also available!
 

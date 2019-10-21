@@ -143,10 +143,7 @@ export default Vue.extend({
     // eslint-disable
     leftImageStyle() {
       return {
-        clip:
-          'rect(auto, ' +
-          this.imageWidth * this.positionPct +
-          'px, auto, auto)',
+        clip: `rect(auto, ${this.imageWidth * this.positionPct}px, auto, auto)`,
       };
     },
     sliderStyle() {

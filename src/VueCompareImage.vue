@@ -7,7 +7,11 @@
       class="left-image"
       ref="leftImageRef"
     />
+    <div :style="leftImageStyle" class="left-label">{{leftLabel}}</div>
+
     <img :alt="rightImageAlt" :src="rightImage" class="right-image" ref="rightImageRef" />
+    <div :style="rightLabelStyle" ref="rightLabelRef" class="right-label">{{rightLabel}}</div>
+
     <div :style="sliderStyle" class="vci-slider">
       <div :style="sliderLineStyle" class="line" />
       <div :style="sliderHandleStyle" class="handle">
@@ -62,6 +66,10 @@ export default Vue.extend({
       type: String,
       default: null,
     },
+    leftLabel: {
+      type: String,
+      default: '',
+    },
     // under image
     rightImage: {
       type: String,
@@ -70,6 +78,10 @@ export default Vue.extend({
     rightImageAlt: {
       type: String,
       default: null,
+    },
+    rightLabel: {
+      type: String,
+      default: '',
     },
     hover: {
       type: Boolean,
@@ -92,6 +104,7 @@ export default Vue.extend({
     getAndSetImageWidth() {
       // @ts-ignore
       this.imageWidth = this.$refs.rightImageRef.getBoundingClientRect().width;
+      this.rightLabelWidth = this.$refs.rightLabelRef.getBoundingClientRect().width;
     },
     startSliding(e) {
       // Prevent default behavior other than mobile scrolling
@@ -146,6 +159,15 @@ export default Vue.extend({
         clip: `rect(auto, ${this.imageWidth * this.positionPct}px, auto, auto)`,
       };
     },
+    rightLabelStyle() {
+      const cutLeft = Math.max(
+        0,
+        this.rightLabelWidth + this.imageWidth * (this.positionPct - 1),
+      );
+      return {
+        clip: `rect(auto, auto, auto, ${cutLeft}px)`,
+      };
+    },
     sliderStyle() {
       return {
         cursor: !this.hover && 'ew-resize',
@@ -191,12 +213,6 @@ export default Vue.extend({
   overflow: hidden;
 }
 
-.right-image {
-  display: block;
-  height: auto; // Respect the aspect ratio
-  width: 100%;
-}
-
 .left-image {
   display: block;
   height: 100%; // fit to the height of under image
@@ -204,6 +220,26 @@ export default Vue.extend({
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.left-label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+}
+
+.right-image {
+  display: block;
+  height: auto; // Respect the aspect ratio
+  width: 100%;
+}
+
+.right-label {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px;
 }
 
 .vci-slider {

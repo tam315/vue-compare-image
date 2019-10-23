@@ -26,6 +26,8 @@
         leftImage="/forest1.jpg"
         rightImage="/forest2.jpg"
         :sliderPositionPercentage="0.2"
+        leftLabel="Forest 1"
+        rightLabel="Forest 2"
       />
     </div>
 
@@ -77,6 +79,8 @@ const code2 = `
     leftImage="/cat1.jpg"
     rightImage="/cat2.jpg"
     :sliderPositionPercentage="0.2"
+    leftLabel="Forest 1"
+    rightLabel="Forest 2"
   />
 </div>`;
 

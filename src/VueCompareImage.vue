@@ -135,24 +135,26 @@ export default Vue.extend({
       const imagePosition = this.$refs.rightImageRef.getBoundingClientRect();
       let pos = cursorXfromWindow - imagePosition.left;
 
-      // Set minimum and maximum values ​​to prevent the slider from overflowing
+      // Set minimum and maximum values to prevent the slider from overflowing
       const minPos = 0 + this.sliderLineWidth / 2;
       const maxPos = this.imageWidth - this.sliderLineWidth / 2;
 
       if (pos < minPos) pos = minPos;
       if (pos > maxPos) pos = maxPos;
 
-      this.positionPct = pos / this.imageWidth;
+      this.sliderPositionPercentage = pos / this.imageWidth;
     },
   },
   data() {
     return {
       // slider position percentage(0 to 1)
-      positionPct: this.sliderPositionPercentage || 0.5,
       imageWidth: 0,
     };
   },
   computed: {
+    positionPct () {
+      return this.sliderPositionPercentage
+    },
     // eslint-disable
     leftImageStyle() {
       return {
